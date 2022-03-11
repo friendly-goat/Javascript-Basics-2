@@ -59,7 +59,7 @@ let canWeDeliver = (zipCode) => {
     }
 }
 // console.log(canWeDeliver(84606))
-// console.log(canWeDeliver(85205))
+// console.log(canWeDeliver(85204))
 
 // Sorry, we can't deliver to that address
 // You're in our delivery zone!
@@ -92,8 +92,8 @@ let canWeDeliverTwo = (zipCode) => {
     return `Sorry, we can't deliver to that address`
 }
 
-// console.log(canWeDeliver(84606))
-// console.log(canWeDeliver(85205))
+// console.log(canWeDeliverTwo(84606))
+// console.log(canWeDeliverTwo(85204))
 
 // Sorry, we can't deliver to that address
 // You're in our delivery zone!

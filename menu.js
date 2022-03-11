@@ -35,7 +35,7 @@ let pizza = {
     price: 10,
     category : 'simple',
     popularity : 4,
-    rating : 'kids',
+    rating : 10,
     tags : ['popular','topSelling']
 }
 
@@ -68,10 +68,9 @@ let pizza = {
     
     Print the value of your new price variable.
 */
-
-pizza.price = 11;
-// console.log(pizza.price)
-// 11
+const {price} = pizza
+// console.log(price)
+// 10
 
 /*
     Fourth, and last, destructure the category
@@ -79,10 +78,9 @@ pizza.price = 11;
 
     Print the value of your category variable. 
 */
-
-pizza.category = 'new';
-// console.log(pizza.category)
-// new
+const {category} = pizza
+// console.log(category)
+// simple
 
 
 //////////////////PROBLEM 3////////////////////
@@ -132,7 +130,7 @@ let foodArr = [
     },
     {
         name : 'salad',
-        price: 6,
+        price: 11,
         category : 'healthy',
         popularity : 1,
         rating : 'gluten free',
@@ -155,7 +153,7 @@ let foodArr = [
 */
 
 const filteredFood = foodArr.filter(someTag => someTag.tags[0] === 'unpopular')
-// console.log(filteredFood)
+console.log(filteredFood)
 //not sure if im following directions, ^^ returns objs that have unpopular as first tag in arr
 /*
 [
@@ -218,31 +216,6 @@ const filteredFood = foodArr.filter(someTag => someTag.tags[0] === 'unpopular')
     Return the filtered array from the entire function
 */
 
-// filterByProperty = (property, number, type) => {
-//     let filtArr = []
-//     if(property == 'rating'){
-//         if(type == 'above'){
-
-//         }else if(type == 'below'){
-            
-//         }
-//     } else if(property == 'popularity'){
-//         if(type == 'above'){
-
-//         }else if(type == 'below'){
-            
-//         }
-//     } else if (property == 'price'){
-//         if(type == 'above'){
-
-//         }else if(type == 'below'){
-            
-//         }
-//     }
-// }
-
-
-
 /*
     Invoke the `filterByProperty` function passing
     in a value for each paramter.
@@ -251,3 +224,15 @@ const filteredFood = foodArr.filter(someTag => someTag.tags[0] === 'unpopular')
 */
 
 //CODE HERE
+const filterByProperty = (property,number,type) => {
+    let filteredArr = foodArr.filter(item => {
+        if(type === 'above'){
+            return item[property] > number
+        } else {
+            return item[property] < number
+        }
+    })
+    return filteredArr
+}
+
+console.log(filterByProperty('price',10,'above'))
