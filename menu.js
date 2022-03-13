@@ -175,7 +175,9 @@ console.log(filteredFood)
   }
 ]
 */
-
+const filteredFood2 = foodArr.filter(someTag => someTag.tags.includes ('unpopular'))
+console.log(filteredFood2)
+//re worked this problem so that it is more dynamic, now tooks at all str in arr to find keyword. filteredFood just looks at one index in arr
 
 //////////////////PROBLEM 5////////////////////
 /* 
@@ -235,4 +237,16 @@ const filterByProperty = (property,number,type) => {
     return filteredArr
 }
 
-console.log(filterByProperty('price',10,'above'))
+const filterByPropertyfunc = function(property,number,type){
+    let filteredArr = foodArr.filter(item => {
+        if(type === 'above'){
+            return item[property] > number
+        } else {
+            return item[property] < number
+        }
+    })
+    return filteredArr
+}
+
+// console.log(filterByProperty('price',10,'above'))
+// console.log(filterByPropertyfunc('price',10,'above'))
